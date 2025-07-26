@@ -8,7 +8,6 @@ import {
   ChevronDown,
   Mail,
   MapPin,
-  Globe,
   Plus,
   X,
   Hand,
@@ -21,6 +20,9 @@ import {
   Crown,
   ScanEye,
   Tag,
+  ScanFace,
+  Target,
+  TrendingUp,
 } from "lucide-react";
 
 export default function ProfileCard() {
@@ -44,7 +46,7 @@ export default function ProfileCard() {
     <div className="max-w-sm mx-auto">
       <Card className="rounded-2xl border border-gray-200 shadow-sm">
         <CardContent className="p-0">
-          <section className="p-6">
+          <section className="p-6 py-3">
             {/* Header */}
             <div className="flex items-start gap-4 relative">
               <section className="relative">
@@ -68,17 +70,24 @@ export default function ProfileCard() {
               </div>
             </div>
           </section>
-          <section className="p-6">
+          <section className="p-6 py-3">
             {/* Info */}
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">ICP-Fit</span>
+                <span className="text-muted-foreground flex items-center gap-[10px]">
+                  <ScanFace className="w-4 h-4" />
+                  <span>ICP-Fit</span>
+                </span>
                 <Badge className="bg-gray-100 text-black border border-dashed border-gray-300">
-                  High
+                  <ScanFace className="w-4 h-4" />
+                  <span>High</span>
                 </Badge>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Campaign</span>
+                <span className="text-muted-foreground flex items-center gap-[10px]">
+                  <Target className="w-4 h-4" />
+                  <span>Campaign</span>
+                </span>
                 {/* pills with dot */}
                 <Button
                   variant="ghost"
@@ -92,7 +101,10 @@ export default function ProfileCard() {
                 </Button>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Status</span>
+                <span className="text-muted-foreground flex items-center gap-[10px]">
+                  <TrendingUp className="w-4 h-4" />
+                  <span>Status</span>
+                </span>
                 {/* <Badge className="bg-red-100 text-red-700">
                   Approval Required
                 </Badge> */}
@@ -102,7 +114,7 @@ export default function ProfileCard() {
                 >
                   <span className="relative flex h-4 w-4">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-red-100 opacity-75"></span>
-                    <span className="relative inline-flex border-[3px] border-[#f3e9dc] rounded-full h-4 w-4 bg-red-700"></span>
+                    <span className="relative inline-flex border-[3px] border-[#F9D2D9] rounded-full h-4 w-4 bg-red-700"></span>
                   </span>
                   <span>Approval Required</span>
                 </Button>
@@ -167,7 +179,7 @@ export default function ProfileCard() {
                     {tags.map(({ label, icon: Icon }) => (
                       <div
                         key={label}
-                        className="p-[1px] rounded-sm bg-[linear-gradient(90deg,#E9B97E_0%,#F4AE8B_24%,#E7A6AF_45%,#EDD9BD_62%,#A1CDD3_80%,#E4C69D_97%)]"
+                        className="p-[1px] cursor-pointer rounded-sm bg-[linear-gradient(90deg,#E9B97E_0%,#F4AE8B_24%,#E7A6AF_45%,#EDD9BD_62%,#A1CDD3_80%,#E4C69D_97%)]"
                       >
                         <div className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-700 bg-white rounded-sm">
                           <Icon className="w-4 h-4 text-gray-500" />
@@ -247,10 +259,10 @@ export default function ProfileCard() {
           </section>
           <section className="">
             {/* Footer */}
-            <div className="text-xs text-center text-muted-foreground mt-2">
-              <p>Added on: Dec 3, 2018</p>
-              <Button variant="outline" size="sm" className="mt-2">
-                Report Information
+            <div className="text-xs mt-[40px] text-center text-muted-foreground mt-2">
+              <p className="font-medium">Added on: Dec 3, 2018</p>
+              <Button variant="outline" size="sm" className="mt-2 bg-[#F6F6F6]">
+                <span className="font-bold text-[#000]">Report Information</span>
               </Button>
             </div>
           </section>

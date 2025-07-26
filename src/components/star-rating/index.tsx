@@ -3,7 +3,7 @@
 import React from "react";
 
 interface StarRatingProps {
-  rating: number; // e.g. 4.5
+  rating: number;
   outOf?: number;
 }
 
@@ -17,7 +17,7 @@ export const StarRating: React.FC<StarRatingProps> = ({
   const emptyStars = outOf - totalStars;
 
   return (
-    <div className="flex items-center gap-2 p-2 rounded">
+    <div className="flex items-center px-[5px] py-0 gap-2 p-2 rounded">
       <span className="text-gray-700 font-medium">
         {rating.toFixed(1)}/{outOf}
       </span>
@@ -28,6 +28,8 @@ export const StarRating: React.FC<StarRatingProps> = ({
             key={`full-${i}`}
             viewBox="0 0 24 24"
             fill="#666"
+            stroke="#7A7A7A"
+            strokeWidth={1}
             className="w-5 h-5"
           >
             <path d="M12 .587l3.668 7.431L24 9.748l-6 5.853L19.336 24 12 20.017 4.664 24 6 15.601 0 9.748l8.332-1.73z" />
@@ -38,13 +40,21 @@ export const StarRating: React.FC<StarRatingProps> = ({
         {hasHalfStar && (
           <div className="relative w-5 h-5">
             {/* Empty Star base */}
-            <svg viewBox="0 0 24 24" fill="#ccc" className="absolute">
+            <svg
+              viewBox="0 0 24 24"
+              fill="#fff"
+              stroke="#7A7A7A"
+              strokeWidth={1}
+              className="absolute"
+            >
               <path d="M12 .587l3.668 7.431L24 9.748l-6 5.853L19.336 24 12 20.017 4.664 24 6 15.601 0 9.748l8.332-1.73z" />
             </svg>
             {/* Half-filled star overlay */}
             <svg
               viewBox="0 0 24 24"
               fill="#666"
+              stroke="#7A7A7A"
+              strokeWidth={1}
               className="absolute"
               style={{ clipPath: "inset(0 50% 0 0)" }}
             >
@@ -58,7 +68,9 @@ export const StarRating: React.FC<StarRatingProps> = ({
           <svg
             key={`empty-${i}`}
             viewBox="0 0 24 24"
-            fill="#ccc"
+            fill="#fff"
+            stroke="#7A7A7A"
+            strokeWidth={1}
             className="w-5 h-5"
           >
             <path d="M12 .587l3.668 7.431L24 9.748l-6 5.853L19.336 24 12 20.017 4.664 24 6 15.601 0 9.748l8.332-1.73z" />

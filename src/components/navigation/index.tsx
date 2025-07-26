@@ -18,7 +18,7 @@ type NavigationProps = {
 
 const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) => {
   return (
-    <nav className="border-b border-gray-200 px-1 sm:px-1 lg:px-0">
+    <nav className="border-b border-gray-200 px-1 sm:px-1 mb-[10px] lg:px-0">
       <ul className="flex items-center gap-6 h-[52px]">
         {TABS.map((tab) => (
           <li key={tab} className="h-full flex items-end">

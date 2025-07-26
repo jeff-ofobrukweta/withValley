@@ -1,46 +1,51 @@
 "use client";
 
-import React from "react";
-import CaretUpIcon from "../caret";
-import CancelIcon from "../cancel-x-icon";
+import { Button } from "@/components/ui/button";
+import { X, ChevronUp } from "lucide-react";
 import MoreVerticalIcon from "../more-vertical";
 
-const PaginationWrapper: React.FC = () => {
+export default function PaginationWrapper() {
   return (
     <nav className="border-t-[3px] border-blue-500">
-      <div className="flex justify-between items-center h-[54px] bg-[#FAFAFA] px-6">
-        <div className="flex items-center gap-[12px]">
+      <div className="flex justify-between items-center h-[54px] bg-muted px-6">
+        <div className="flex items-center gap-3">
           {/* Left Controls */}
-          <div className="flex gap-[8px]">
-            <button className="p-1.5 rounded hover:bg-gray-100">
-              <CancelIcon className="w-5 h-5 text-black" />
-            </button>
-            <button className="p-1.5 rounded hover:bg-gray-100 border border-gray-300">
-              <CaretUpIcon className="w-4 h-4 rotate-180 text-gray-700" />
-            </button>
-            <button className="p-1.5 rounded hover:bg-gray-100 border border-gray-300">
-              <CaretUpIcon className="w-4 h-4 text-gray-700" />
-            </button>
+          <div className="flex gap-2">
+            <Button size="icon" variant="ghost" className="w-8 h-8">
+              <X className="w-5 h-5 text-black" />
+            </Button>
+
+            <Button
+              size="icon"
+              variant="outline"
+              className="w-8 h-8 cursor-pointer border-gray-300 bg-transparent hover:bg-muted"
+            >
+              <ChevronUp className="w-4 h-4 text-gray-700" />
+            </Button>
+
+            <Button
+              size="icon"
+              variant="outline"
+              className="w-8 h-8 cursor-pointer border-gray-300 bg-transparent hover:bg-muted"
+            >
+              <ChevronUp className="w-4 h-4 rotate-180 text-gray-700" />
+            </Button>
           </div>
 
           {/* Center Info */}
           <div className="text-sm text-gray-800 whitespace-nowrap">
-            <span className="font-semibold text-gray-900">1 of 540</span> in{' '}
+            <span className="font-semibold text-gray-900">1 of 540</span> in{" "}
             <a href="#" className="underline font-medium text-black">
               Valley Sales Strategy
             </a>
           </div>
         </div>
 
-        {/* More Options Icon */}
-        <div>
-          <button className="p-1.5 rounded hover:bg-gray-100">
-            <MoreVerticalIcon />
-          </button>
-        </div>
+        {/* More Options */}
+        <button className="p-1.5 cursor-pointer rounded hover:bg-gray-100">
+          <MoreVerticalIcon />
+        </button>
       </div>
     </nav>
   );
-};
-
-export default PaginationWrapper;
+}

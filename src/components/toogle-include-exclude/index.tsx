@@ -13,10 +13,8 @@ export default function ToggleIncludedExcluded() {
           key={option}
           onClick={() => setSelected(option as "Included" | "Excluded")}
           className={cn(
-            "px-5 py-1.5 text-sm rounded-[8px] transition-all font-medium",
-            selected === option
-              ? "bg-white text-black shadow"
-              : "text-gray-500"
+            "px-5 py-1.5 text-sm rounded-[8px] transition-all font-medium cursor-pointer",
+            selected === option ? "bg-white text-black shadow" : "text-gray-500"
           )}
         >
           {option}

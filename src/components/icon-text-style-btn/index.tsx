@@ -28,6 +28,7 @@ export default function IconTextSquareButton({
         "border border-gray-300 shadow-sm",
         "hover:bg-muted/50 transition-colors",
         "rounded-md min-h-[41px]",
+        "cursor-pointer",
         className
       )}
       {...props}
