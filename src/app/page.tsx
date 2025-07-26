@@ -65,7 +65,7 @@ export default function Home() {
       <div className="relative overflow-hidden">
         <TopGradientBackground />
 
-        <div className="relative z-10 pt-[90px] px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative z-10 mt-[77px] px-4 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-x-6 items-start">
             <div className="lg:col-span-4 flex flex-col gap-6">
               <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />

@@ -1,3 +1,6 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes } from "react";
 import { LucideIcon } from "lucide-react";
@@ -17,13 +20,14 @@ export default function IconTextSquareButton({
   ...props
 }: IconTextButtonProps) {
   return (
-    <button
+    <Button
+      variant="outline"
       className={cn(
         "flex items-center gap-2 px-3 py-1.5",
         "bg-white text-sm font-medium text-black",
-        "rounded-md border border-gray-300 shadow-sm",
+        "border border-gray-300 shadow-sm",
         "hover:bg-muted/50 transition-colors",
-        "whitespace-nowrap min-h-[41px]",
+        "rounded-md min-h-[41px]",
         className
       )}
       {...props}
@@ -31,6 +35,6 @@ export default function IconTextSquareButton({
       <Icon className="w-4 h-4" />
       <span className="whitespace-nowrap">{text}</span>
       {RightIcon && <RightIcon className="w-4 h-4 text-black/80" />}
-    </button>
+    </Button>
   );
 }

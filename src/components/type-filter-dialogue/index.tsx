@@ -1,9 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Command, CommandInput } from "@/components/ui/command";
+import {
+  Command,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+} from "@/components/ui/command";
 
 type FilterOption = {
   label: string;
@@ -24,10 +30,6 @@ export default function TypeFilterDialog() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [query, setQuery] = useState("");
 
-  const filteredOptions = typeOptions.filter((opt) =>
-    opt.label.toLowerCase().includes(query.toLowerCase())
-  );
-
   const toggleType = (label: string) => {
     setSelectedTypes((prev) =>
       prev.includes(label)
@@ -36,35 +38,39 @@ export default function TypeFilterDialog() {
     );
   };
 
+  const filteredOptions = typeOptions.filter((opt) =>
+    opt.label.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
-    <div className="w-72 rounded-xl border shadow-md bg-white">
-      <Command>
-        <CommandInput
-          placeholder="Search types"
-          className="border-none focus:outline-none"
-          onValueChange={setQuery}
-        />
-        <section className="p-2">
-          <div className="max-h-64 overflow-y-auto border rounded-md border-blue-300">
-            {filteredOptions.map(({ label, count }) => (
-              <div
-                key={label}
-                className="flex items-center justify-between px-3 py-2 border-b last:border-b-0 hover:bg-gray-50"
-                onClick={() => toggleType(label)}
-              >
-                <div className="flex items-center gap-2">
-                  <Checkbox
-                    checked={selectedTypes.includes(label)}
-                    onCheckedChange={() => toggleType(label)}
-                  />
-                  <span className="text-sm font-medium">{label}</span>
-                </div>
-                <span className="text-sm text-muted-foreground">{count}</span>
+    <Command className="rounded-lg w-72 bg-white">
+      <CommandInput
+        placeholder="Search types..."
+        onValueChange={setQuery}
+        className="border-none focus:outline-none"
+      />
+      <CommandList className="max-h-64 overflow-y-auto">
+        <CommandEmpty>No matching types found.</CommandEmpty>
+        <CommandGroup heading="Message Types">
+          {filteredOptions.map(({ label, count }) => (
+            <CommandItem
+              key={label}
+              onSelect={() => toggleType(label)}
+              className="flex justify-between items-center cursor-pointer"
+            >
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  checked={selectedTypes.includes(label)}
+                  onCheckedChange={() => toggleType(label)}
+                  className="h-4 w-4"
+                />
+                <span className="text-sm">{label}</span>
               </div>
-            ))}
-          </div>
-        </section>
-      </Command>
-    </div>
+              <span className="text-sm text-muted-foreground">{count}</span>
+            </CommandItem>
+          ))}
+        </CommandGroup>
+      </CommandList>
+    </Command>
   );
 }
