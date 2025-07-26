@@ -118,26 +118,10 @@ export default function AITraining() {
           open={false}
           onToggle={()=> ''} // toogle function here....
           titleMeta={<StarRating rating={4.5} />}
-          content={
-            <section className="text-sm leading-relaxed space-y-6">
-              <p>Hey Crew,</p>
-
-              <p>
-                Hope you're having a great week so far! ✨ We've got some juicy
-                reads for you about self-custody and shaking off the chains of
-                traditional finance. Check it out:
-              </p>
-
-              <div className="space-y-1">
-                <p>Best regards,</p>
-                <p>Andrew</p>
-              </div>
-            </section>
-          }
         />
       </MessageBlock>
 
-      <MessageBlock>
+      <MessageBlock showLine={false}>
         <UserAvatarGroup date="8 days ago" />
       </MessageBlock>
 
