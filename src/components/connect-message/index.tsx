@@ -60,7 +60,7 @@ export default function ConnectMessageCard() {
         <div className="text-sm text-gray-800 space-y-4 whitespace-pre-line leading-relaxed">
           <p>Hey Crew,</p>
           <p>
-            Hope you're doing awesome! 🌟 We've got some juicy reads for you
+            Hope you&apos;re doing awesome! 🌟 We&apos;ve got some juicy reads for you
             about self-custody and shaking off the chains of traditional
             finance. Check it out:
           </p>
