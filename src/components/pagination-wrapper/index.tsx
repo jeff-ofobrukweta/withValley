@@ -35,7 +35,7 @@ const PaginationWrapper: React.FC = () => {
         {/* More Options Icon */}
         <div>
           <button className="p-1.5 rounded hover:bg-gray-100">
-            <MoreVerticalIcon className="w-5 h-5 text-gray-600" />
+            <MoreVerticalIcon />
           </button>
         </div>
       </div>
