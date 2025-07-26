@@ -126,75 +126,64 @@ export default function ProfileCard() {
             <div className="border-t border-b py-4 border-[#E5E5E5]">
               <div className="flex justify-between items-center mb-2">
                 <div className="flex items-center gap-2 text-muted-foreground">
-                  <Tag />
+                  <Tag className="w-4 h-4 text-gray-500" />
                   <span className="font-medium text-sm">Tags</span>
                 </div>
-                <X className="w-4 h-4 text-muted-foreground cursor-pointer" />
+                <X className="w-4 h-4 text-gray-500 text-muted-foreground cursor-pointer" />
               </div>
-              {/* <div className="border border-dashed border-[2px]  bg-[linear-gradient(white,white)_padding-box,_linear-gradient(90deg,#E9B97E_0%,#F4AE8B_24.04%,#E7A6AF_45.67%,#EDD9BD_62.5%,#A1CDD3_80.29%,#E4C69D_97.12%)_border-box] p-3 rounded-lg">
-                <div className="flex flex-wrap gap-2">
+
+              <div className="relative rounded-lg p-[2px] bg-white overflow-hidden">
+                {/* Fake dashed border using background + mask */}
+                <div
+                  className="absolute inset-0 rounded-lg pointer-events-none z-0"
+                  style={{
+                    backgroundImage: `
+                      linear-gradient(90deg, #E9B97E 0%, #F4AE8B 24.04%, #E7A6AF 45.67%, #EDD9BD 62.5%, #A1CDD3 80.29%, #E4C69D 97.12%),
+                      linear-gradient(360deg, #FFFFFF 42.75%, rgba(255, 255, 255, 0.2) 100%)
+                    `,
+                    WebkitMaskImage: `
+                      repeating-linear-gradient(
+                        to right,
+                        black 0 8px,
+                        transparent 8px 12px
+                      ),
+                      repeating-linear-gradient(
+                        to bottom,
+                        black 0 8px,
+                        transparent 8px 12px
+                      )
+                    `,
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                    maskImage: `
+        repeating-linear-gradient(to right, black 0 8px, transparent 8px 12px),
+        repeating-linear-gradient(to bottom, black 0 8px, transparent 8px 12px)
+      `,
+                  }}
+                />
+
+                {/* Content */}
+                <div className="relative z-10 bg-white rounded-lg p-3 flex flex-wrap gap-2">
                   {tags.map(({ label, icon: Icon }) => (
                     <div
                       key={label}
-                      className="p-[1px] rounded-sm bg-[linear-gradient(90deg,_#E9B97E_0%,_#F4AE8B_24.04%,_#E7A6AF_45.67%,_#EDD9BD_62.5%,_#A1CDD3_80.29%,_#E4C69D_97.12%)]"
+                      className="p-[1px] cursor-pointer rounded-md bg-[linear-gradient(90deg,#E9B97E_0%,#F4AE8B_24.04%,#E7A6AF_45.67%,#EDD9BD_62.5%,#A1CDD3_80.29%,#E4C69D_97.12%)]"
                     >
-                      <div className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-700 bg-white rounded-sm">
-                        <Icon className="w-4 h-4 text-gray-500" />
-                        <span>{label}</span>
+                      <div className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-700 bg-white rounded-md">
+                        <Icon className="w-4 h-4 text-semibold text-gray-500 text-[#7a7a7a]" />
+                        <span className="text-semibold text-[#7a7a7a]">{label}</span>
                       </div>
                     </div>
                   ))}
-                  <div className="p-[1px] rounded-sm bg-[linear-gradient(90deg,_#E9B97E_0%,_#F4AE8B_24.04%,_#E7A6AF_45.67%,_#EDD9BD_62.5%,_#A1CDD3_80.29%,_#E4C69D_97.12%)]">
-                    <button className="rounded-sm bg-white bg-[linear-gradient(90deg,_#E9B97E_0%,_#F4AE8B_24.04%,_#E7A6AF_45.67%,_#EDD9BD_62.5%,_#A1CDD3_80.29%,_#E4C69D_97.12%)] text-gray-500 p-2 hover:bg-gray-50">
-                      <Plus className="w-4 h-4" />
+                  <div className="p-[1px] rounded-md bg-[linear-gradient(90deg,#E9B97E_0%,#F4AE8B_24.04%,#E7A6AF_45.67%,#EDD9BD_62.5%,#A1CDD3_80.29%,#E4C69D_97.12%)]">
+                    <button className="p-2 cursor-pointer rounded-md text-gray-600 bg-[linear-gradient(135deg,rgba(255,255,255,0.6),rgba(255,255,255,0))] backdrop-blur-sm">
+                      <Plus className="w-4 h-4 text-[#7a7a7a]" />
                     </button>
-                  </div>
-                </div>
-              </div> */}
-
-              {/* <div className="gradient-dashed-outline bg-white rounded-lg">
-                <div className="flex flex-wrap gap-2">
-                  {tags.map(({ label, icon: Icon }) => (
-                    <div
-                      key={label}
-                      className="p-[1px] rounded-sm bg-[linear-gradient(90deg,#E9B97E_0%,#F4AE8B_24%,#E7A6AF_45%,#EDD9BD_62%,#A1CDD3_80%,#E4C69D_97%)]"
-                    >
-                      <div className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-700 bg-white rounded-sm">
-                        <Icon className="w-4 h-4 text-gray-500" />
-                        <span>{label}</span>
-                      </div>
-                    </div>
-                  ))}
-                  <div className="p-[1px] rounded-sm bg-[linear-gradient(90deg,_#E9B97E_0%,_#F4AE8B_24%,_#E7A6AF_45%,_#EDD9BD_62%,_#A1CDD3_80%,_#E4C69D_97%)]">
-                    <button className="p-2 rounded-sm bg-white text-gray-500">
-                      <Plus className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div> */}
-
-              <div className="relative rounded-lg p-[2px] bg-[linear-gradient(90deg,#E9B97E,#F4AE8B,#E7A6AF,#EDD9BD,#A1CDD3,#E4C69D)]">
-                <div className="rounded-lg bg-white border-[2px] border-dashed border-transparent bg-clip-padding">
-                  <div className="flex flex-wrap gap-2 p-3">
-                    {tags.map(({ label, icon: Icon }) => (
-                      <div
-                        key={label}
-                        className="p-[1px] cursor-pointer rounded-sm bg-[linear-gradient(90deg,#E9B97E_0%,#F4AE8B_24%,#E7A6AF_45%,#EDD9BD_62%,#A1CDD3_80%,#E4C69D_97%)]"
-                      >
-                        <div className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-700 bg-white rounded-sm">
-                          <Icon className="w-4 h-4 text-gray-500" />
-                          <span>{label}</span>
-                        </div>
-                      </div>
-                    ))}
-                    <div className="p-[1px] rounded-sm bg-[linear-gradient(90deg,_#E9B97E_0%,_#F4AE8B_24%,_#E7A6AF_45%,_#EDD9BD_62%,_#A1CDD3_80%,_#E4C69D_97%)]">
-                      <button className="p-2 rounded-sm bg-white text-gray-500">
-                        <Plus className="w-4 h-4" />
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* tags end here */}
             </div>
           </section>
 
@@ -262,7 +251,9 @@ export default function ProfileCard() {
             <div className="text-xs mt-[40px] text-center text-muted-foreground mt-2">
               <p className="font-medium">Added on: Dec 3, 2018</p>
               <Button variant="outline" size="sm" className="mt-2 bg-[#F6F6F6]">
-                <span className="font-bold text-[#000]">Report Information</span>
+                <span className="font-bold text-[#000]">
+                  Report Information
+                </span>
               </Button>
             </div>
           </section>

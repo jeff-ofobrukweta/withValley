@@ -38,11 +38,11 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#F8F8F8] min-h-screen">
+    <div className="min-h-screen">
       <PaginationWrapper />
 
       <CustomModal
-        visible={false}
+        visible={open}
         onClose={() => setOpen(false)}
         // title="Example Modal"
         showFooter={false}

@@ -8,7 +8,7 @@ import SequenceVersionStyleBtn from "@/components/sequence-version-btn";
 
 export default function Messages() {
   return (
-    <div className="flex relative flex-col bg-[#F8F8F8] text-sm text-muted-foreground">
+    <div className="flex relative flex-col text-sm text-muted-foreground">
       {/* Scrollable Content */}
       <div className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
         <section className="space-y-4">

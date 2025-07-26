@@ -7,7 +7,7 @@ export default function ToggleIncludedExcluded() {
   const [selected, setSelected] = useState<"Included" | "Excluded">("Included");
 
   return (
-    <div className="flex w-fit rounded-[10px] bg-[#f6f6f6] p-1 border border-gray-200 shadow-sm">
+    <div className="flex w-fit rounded-[10px] bg-[#f6f6f6] p-1 border border-gray-200">
       {["Included", "Excluded"].map((option) => (
         <button
           key={option}
