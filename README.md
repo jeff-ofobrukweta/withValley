@@ -9,13 +9,11 @@ This project takes a **modular and atomic approach** to UI development using:
 - **shadcn/ui** components for accessibility-compliant primitives and dialog modals.
 - **Lucide-react** for consistent and scalable SVG icons.
 
-
 ## Component Structure and Rationale
 
 - **Reusable**: All components are built with reusability in mind.
 - **Isolated Styles**: Gradients and borders use custom Tailwind config or inline styles for maximum visual control.
 - **Composable**: Components like `BaseModal` accept `children` as props and manage state externally.
-
 
 ## Assumptions and Edge Case Handling
 
@@ -24,8 +22,7 @@ This project takes a **modular and atomic approach** to UI development using:
 - **Modal Sizing**: Modals default to full height & width and are right-aligned. They also support arbitrary children for flexibility.
 - **Content Overflow**: Scroll behavior is managed via internal `<div>` wrappers rather than on the `Dialog` component itself, to preserve modal boundaries.
 
-
-## ♿ Accessibility Considerations
+## Accessibility Considerations
 
 - All dialogs use **shadcn/ui's Dialog** component, which includes:
   - ARIA roles
@@ -35,7 +32,6 @@ This project takes a **modular and atomic approach** to UI development using:
 - Icons are paired with **descriptive text** for improved screen reader clarity.
 - Modal close buttons are accessible via the `Esc` key and are visually discoverable.
 
-
 ## Performance Considerations
 
 - **Stateless UI components** are used where possible to reduce unnecessary re-renders.
@@ -43,7 +39,6 @@ This project takes a **modular and atomic approach** to UI development using:
 - Avoided unnecessary **animation layers** and expensive layout shifts.
 - **Tailwind CSS** purging ensures minimal CSS payload.
 - Components like `TagGroup` and `MessageCard` can optionally use `React.memo` for additional optimization.
-
 
 ## What I'd Refactor With More Time
 
