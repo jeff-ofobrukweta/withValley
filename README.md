@@ -9,7 +9,6 @@ This project takes a **modular and atomic approach** to UI development using:
 - **shadcn/ui** components for accessibility-compliant primitives and dialog modals.
 - **Lucide-react** for consistent and scalable SVG icons.
 
----
 
 ## Component Structure and Rationale
 
@@ -17,16 +16,14 @@ This project takes a **modular and atomic approach** to UI development using:
 - **Isolated Styles**: Gradients and borders use custom Tailwind config or inline styles for maximum visual control.
 - **Composable**: Components like `BaseModal` accept `children` as props and manage state externally.
 
----
 
-## 🔍 Assumptions and Edge Case Handling
+## Assumptions and Edge Case Handling
 
 - **Tag Pills**: All tags are assumed to have a `label` and `icon`. When icons are missing, layout still renders cleanly.
 - **Gradient Borders**: Since Tailwind doesn’t support gradient borders natively, `p-[1px]` gradient wrappers are used around white cards to simulate the effect.
 - **Modal Sizing**: Modals default to full height & width and are right-aligned. They also support arbitrary children for flexibility.
 - **Content Overflow**: Scroll behavior is managed via internal `<div>` wrappers rather than on the `Dialog` component itself, to preserve modal boundaries.
 
----
 
 ## ♿ Accessibility Considerations
 
@@ -38,7 +35,6 @@ This project takes a **modular and atomic approach** to UI development using:
 - Icons are paired with **descriptive text** for improved screen reader clarity.
 - Modal close buttons are accessible via the `Esc` key and are visually discoverable.
 
----
 
 ## Performance Considerations
 
@@ -48,7 +44,6 @@ This project takes a **modular and atomic approach** to UI development using:
 - **Tailwind CSS** purging ensures minimal CSS payload.
 - Components like `TagGroup` and `MessageCard` can optionally use `React.memo` for additional optimization.
 
----
 
 ## What I'd Refactor With More Time
 
