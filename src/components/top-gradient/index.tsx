@@ -8,15 +8,31 @@ const TopGradient: React.FC = () => {
         className="w-full h-full"
         style={{
           backgroundImage: `
-            linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%),
-            linear-gradient(90deg, #E9B97E 0%, #F4AE8B 24.04%, #E7A6AF 45.67%, #EDD9BD 62.5%, #A1CDD3 80.29%, #E4C69D 97.12%)
+            linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0) 0%,
+              #ffffff 85%
+            ),
+            linear-gradient(
+              90deg,
+              #E9B97E 0%,
+              #F4AE8B 24.04%,
+              #E7A6AF 45.67%,
+              #EDD9BD 62.5%,
+              #A1CDD3 80.29%,
+              #E4C69D 97.12%
+            )
           `,
-          backgroundBlendMode: "overlay",
+          backgroundBlendMode: "normal",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
         }}
       />
     </div>
   );
 };
+
+
 
 
 
