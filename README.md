@@ -46,6 +46,7 @@ This project takes a **modular and atomic approach** to UI development using:
 - Improve **icon fallback logic** in the tag system for better robustness.
 - Use **accessibility audit tools** like Axe or Lighthouse to catch minor ARIA issues.
 - Polish **modal transitions and animations** using Framer Motion for smoother UX.
+- Add **responsive styles for mobile and tablet** breakpoints if detailed Figma designs were available.
 
 
 
