@@ -38,7 +38,7 @@ export default function AITraining() {
               <p className="font-medium">Hey Crew,</p>
 
               <p className="font-medium">
-                Hope you're having a great week so far! ✨ We've got some juicy
+                Hope you&apos;re having a great week so far! ✨ We&apos;ve got some juicy
                 reads for you about self-custody and shaking off the chains of
                 traditional finance. Check it out:
               </p>
@@ -68,7 +68,7 @@ export default function AITraining() {
               <p className="font-medium">Hey Crew,</p>
 
               <p className="font-medium">
-                Hope you're having a great week so far! ✨ We've got some juicy
+                Hope you&apos;re having a great week so far! ✨ We&apos;ve got some juicy
                 reads for you about self-custody and shaking off the chains of
                 traditional finance. Check it out:
               </p>
@@ -98,7 +98,7 @@ export default function AITraining() {
               <p>Hey Crew,</p>
 
               <p>
-                Hope you're having a great week so far! ✨ We've got some juicy
+                Hope you&apos;re having a great week so far! ✨ We&apos;ve got some juicy
                 reads for you about self-custody and shaking off the chains of
                 traditional finance. Check it out:
               </p>
