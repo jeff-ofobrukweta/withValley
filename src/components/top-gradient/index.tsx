@@ -1,18 +1,24 @@
-// components/TopGradient.tsx
-import React from 'react';
+// // components/TopGradient.tsx
+import React from "react";
 
 const TopGradient: React.FC = () => {
   return (
-    // components/TopGradientBackground.tsx
-    // <div className="absolute top-0 left-0 w-full h-[50px] z-0 pointer-events-none">
-    //   {/* Gradient background with fade */}
-    //   <div className="w-full h-full bg-gradient-to-b from-[#F0B87E] via-[#F4AE8B] to-white" />
-    // </div>
-    <div className="absolute top-0 left-0 w-full h-[128px] z-1 pointer-events-none">
-      {/* Soft blend from orange-pink to white */}
-      <div className="w-full h-full bg-[linear-gradient(180deg,_#F8CBA0_0%,_#F3B0A4_40%,_#FFFFFF_85%)]" />
+    <div className="absolute top-0 left-0 w-full h-[128px] z-0 pointer-events-none">
+      <div
+        className="w-full h-full"
+        style={{
+          backgroundImage: `
+            linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%),
+            linear-gradient(90deg, #E9B97E 0%, #F4AE8B 24.04%, #E7A6AF 45.67%, #EDD9BD 62.5%, #A1CDD3 80.29%, #E4C69D 97.12%)
+          `,
+          backgroundBlendMode: "overlay",
+        }}
+      />
     </div>
   );
 };
 
+
+
 export default TopGradient;
+

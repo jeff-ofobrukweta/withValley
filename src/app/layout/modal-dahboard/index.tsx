@@ -12,10 +12,9 @@ import { useState } from "react";
 import Messages from "@/pages/messages";
 import AITraining from "@/pages/ai-trainings";
 import Research from "@/pages/researchs";
-import ModalDialogueDahboardLayout from "./layout/modal-dahboard";
 
 
-export default function Home() {
+export default function ModalDialogueDahboardLayout() {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("AI Training");
 
@@ -42,11 +41,10 @@ export default function Home() {
       <PaginationWrapper />
 
       <CustomModal
-        visible={false}
+        visible={open}
         onClose={() => setOpen(false)}
-        // title="Example Modal"
-        showFooter={false}
-        showCustomHeader={false}
+        title="Example Modal"
+        showFooter
         customFooter={
           <div className="flex justify-end gap-2">
             <button
@@ -61,7 +59,7 @@ export default function Home() {
           </div>
         }
       >
-        {/* <ModalDialogueDahboardLayout/> */}
+        <p>This is the modal content.</p>
       </CustomModal>
 
       <div className="relative overflow-hidden">
