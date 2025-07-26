@@ -41,12 +41,13 @@ This project takes a **modular and atomic approach** to UI development using:
 **What I'd Refactor With More Time**
 
 - Extract Tailwind **colors and spacing into design tokens** to enable easier theming and scaling.
-- Add **unit and integration tests** using Vitest or Jest for core UI interactions (e.g., modal open/close, tag selection).
-- Introduce **global state management** (e.g., Jotai or Zustand) for better scalability.
-- Improve **icon fallback logic** in the tag system for better robustness.
-- Use **accessibility audit tools** like Axe or Lighthouse to catch minor ARIA issues.
-- Polish **modal transitions and animations** using Framer Motion for smoother UX.
-- Add **responsive styles for mobile and tablet** breakpoints if detailed Figma designs were available.
+- Add **unit and integration tests** using Vitest or Jest to cover core UI interactions like modal open/close and tag rendering.
+- Introduce **global state management** (e.g., Jotai or Zustand) for more scalable and maintainable state flows.
+- Improve **icon fallback logic** in the tag system for better robustness in unpredictable data scenarios.
+- Strengthen the codebase with more **extensive and explicit TypeScript types**, especially around component props and state handlers.
+- Use **accessibility audit tools** like Axe or Lighthouse to proactively catch minor ARIA or keyboard navigation issues.
+- Polish **modal transitions and animations** using Framer Motion for a more fluid and engaging user experience.
+- Add **responsive styles for mobile and tablet views**, especially if Figma designs or additional time were available for layout testing.
 
 
 
