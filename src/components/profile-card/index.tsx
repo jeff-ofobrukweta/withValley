@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -26,7 +26,6 @@ import {
 } from "lucide-react";
 
 export default function ProfileCard() {
-  const [filter, setFilter] = useState("Included");
 
   const tags = [
     { label: "Stop Outreach", icon: Hand },
@@ -44,7 +43,7 @@ export default function ProfileCard() {
 
   return (
     <div className="max-w-sm mx-auto">
-      <Card className="rounded-2xl border border-gray-200 shadow-sm">
+      <Card className="rounded-sm border border-gray-200 shadow-sm">
         <CardContent className="p-0">
           <section className="p-6 py-3">
             {/* Header */}

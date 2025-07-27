@@ -1,7 +1,20 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-type userAvaterMeta = {
-  date: string;
+
+
+type UserActivityProps = {
+  primaryText: string;
+  timestamp: string;
+};
+
+export const UserActivity = ({ primaryText, timestamp }: UserActivityProps) => {
+  return (
+    <div className="text-sm text-[#000] flex items-center gap-2 px-1 py-3 pt-0">
+      <span>{primaryText}</span>
+      <span className="text-muted-foreground text-bold">•</span>
+      <span className="text-muted-foreground">{timestamp}</span>
+    </div>
+  );
 };
 
 const users = [
@@ -27,16 +40,18 @@ const users = [
   },
 ];
 
-export default function UserAvatarGroup({ date }: userAvaterMeta) {
+export default function UserAvatarGroup({
+  primaryText,
+  timestamp  
+}: UserActivityProps) {
   return (
     <div className="flex flex-col relative -top-[10px]">
       <section>
         <div className="px-1 py-3 text-sm text-muted-foreground">
-          <p>
-            Writing style updated from{" "}
-            <span className="font-semibold text-black">Campaign name</span> via{" "}
-            <span className="font-semibold text-black">Prospect name</span> • {date}
-          </p>
+          <UserActivity
+            primaryText={primaryText}
+            timestamp={timestamp}
+          />
         </div>
       </section>
 

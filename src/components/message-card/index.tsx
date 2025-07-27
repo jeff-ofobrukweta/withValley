@@ -4,19 +4,19 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { ReactNode, useState } from "react";
 
 type MessageBlockProps = {
-  date: string;
   titleMeta?: ReactNode;
   content?: ReactNode;
-  open?: boolean; // controlled open state
-  onToggle?: (open: boolean) => void; // callback to update open state externally
+  open?: boolean;
+  onToggle?: (open: boolean) => void;
+  metaDescription?: ReactNode; // new prop for header meta
 };
 
 export default function MessageCard({
-  date,
   titleMeta,
   content,
   open: openProp,
   onToggle,
+  metaDescription,
 }: MessageBlockProps) {
   const isControlled = openProp !== undefined;
   const [internalOpen, setInternalOpen] = useState(false);
@@ -33,20 +33,20 @@ export default function MessageCard({
   return (
     <div className="flex-1 mb-6 relative -top-[10px]">
       {/* Header */}
-      <div className="px-4 py-3 text-sm text-muted-foreground">
-        <p>
-          Writing style updated from{" "}
-          <span className="font-medium text-black font-700">Campaign name</span>{" "}
-          via{" "}
-          <span className="font-medium text-black font-700">Prospect name</span>{" "}
-          • {date}
-        </p>
+      <div className="px-4 pl-0 py-3 text-sm text-muted-foreground">
+        {metaDescription ?? (
+          <p>
+            <span className="font-medium text-black font-medium">
+              No avaliable meta description.
+            </span>
+          </p>
+        )}
       </div>
 
       {/* Collapsible Body */}
       <div className="shadow-sm border rounded-sm bg-white">
         <div
-          className="flex items-center justify-between min-h-[56px] px-4 py-3 cursor-pointer hover:bg-muted/50"
+          className="flex items-center justify-between min-h-[56px]  px-4 py-3 cursor-pointer hover:bg-muted/50"
           onClick={handleToggle}
         >
           <div className="flex items-center text-[#7a7a7a] gap-2 text-sm font-medium">

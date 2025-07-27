@@ -24,37 +24,32 @@ export default function AITraining() {
 
       <MessageBlock>
         <MessageCard
-          date="Tue, May 12, 9:14 AM"
           open={false}
-          onToggle={()=> ''} // toogle function here....
+          onToggle={() => ""} // toogle function here....
           titleMeta={
             <>
               <Paperclip className="w-4 h-4" />
               Manual changes
             </>
           }
-          content={
-            <section className="text-sm leading-relaxed space-y-6">
-              <p className="font-medium">Hey Crew,</p>
-
-              <p className="font-medium">
-                Hope you&apos;re having a great week so far! ✨ We&apos;ve got some juicy
-                reads for you about self-custody and shaking off the chains of
-                traditional finance. Check it out:
-              </p>
-
-              <div className="space-y-1">
-                <p className="font-medium">Best regards,</p>
-                <p className="font-medium">Andrew</p>
-              </div>
-            </section>
+          metaDescription={
+            <p>
+              Writing style updated from{" "}
+              <span className="font-medium text-black font-700">
+                Campaign name
+              </span>{" "}
+              via{" "}
+              <span className="font-medium text-black font-700">
+                Prospect name
+              </span>{" "}
+              • Tue, May 12, 9:14 AM
+            </p>
           }
         />
       </MessageBlock>
 
       <MessageBlock>
         <MessageCard
-          date="Tue, May 12, 9:14 AM (2 days ago)"
           open={isOpen}
           onToggle={setIsOpen}
           titleMeta={
@@ -63,14 +58,27 @@ export default function AITraining() {
               Custom message
             </>
           }
+          metaDescription={
+            <p>
+              Writing style updated from{" "}
+              <span className="font-medium text-black font-700">
+                Campaign name
+              </span>{" "}
+              via{" "}
+              <span className="font-medium text-black font-700">
+                Prospect name
+              </span>{" "}
+              • Tue, May 12, 9:14 AM (2 days ago)
+            </p>
+          }
           content={
             <section className="text-sm leading-relaxed space-y-6">
               <p className="font-medium">Hey Crew,</p>
 
               <p className="font-medium">
-                Hope you&apos;re having a great week so far! ✨ We&apos;ve got some juicy
-                reads for you about self-custody and shaking off the chains of
-                traditional finance. Check it out:
+                Hope you&apos;re having a great week so far! ✨ We&apos;ve got
+                some juicy reads for you about self-custody and shaking off the
+                chains of traditional finance. Check it out:
               </p>
 
               <div className="space-y-1">
@@ -84,48 +92,59 @@ export default function AITraining() {
 
       <MessageBlock>
         <MessageCard
-          date="Tue, May 12, 9:14 AM"
           open={false}
-          onToggle={()=> ''} // toogle function here....
+          onToggle={() => ""} // toogle function here....
           titleMeta={
             <>
               <Brain className="w-4 h-4" />
               Generated message
             </>
           }
-          content={
-            <section className="text-sm leading-relaxed space-y-6">
-              <p>Hey Crew,</p>
-
-              <p>
-                Hope you&apos;re having a great week so far! ✨ We&apos;ve got some juicy
-                reads for you about self-custody and shaking off the chains of
-                traditional finance. Check it out:
-              </p>
-
-              <div className="space-y-1">
-                <p>Best regards,</p>
-                <p>Andrew</p>
-              </div>
-            </section>
+          metaDescription={
+            <p>
+              Message generated from{" "}
+              <span className="font-medium text-black font-700">
+                Campaign name
+              </span>{" "}
+              via{" "}
+              <span className="font-medium text-black font-700">
+                Prospect name
+              </span>{" "}
+              <span className="font-medium">by Valley</span> • 8 days ago
+            </p>
           }
         />
       </MessageBlock>
 
       <MessageBlock>
         <MessageCard
-          date="8 days ago"
           open={false}
-          onToggle={()=> ''} // toogle function here....
+          onToggle={() => ""} // toogle function here....
           titleMeta={<StarRating rating={4.5} />}
+          metaDescription={
+            <p>
+              Message rated from{" "}
+              <span className="font-medium text-black font-700">
+                Campaign name
+              </span>{" "}
+              via{" "}
+              <span className="font-medium text-black font-700">
+                Prospect name
+              </span>{" "}
+              <span className="font-medium">by You</span> • 8 days ago
+            </p>
+          }
         />
       </MessageBlock>
 
       <MessageBlock showLine={false}>
-        <UserAvatarGroup date="8 days ago" />
+        <UserAvatarGroup
+          primaryText="James Laurensky and 45 others have been added to Performance tracking"
+          timestamp="8 days ago"
+        />
       </MessageBlock>
 
-      <div className="mt-2">
+      <div className="mt-8">
         <PromptInput />
       </div>
     </>
