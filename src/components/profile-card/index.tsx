@@ -26,7 +26,6 @@ import {
 } from "lucide-react";
 
 export default function ProfileCard() {
-
   const tags = [
     { label: "Stop Outreach", icon: Hand },
     { label: "Meeting Scheduled", icon: Calendar },
@@ -39,6 +38,41 @@ export default function ProfileCard() {
     { title: "Experience", icon: Crown },
     { title: "Education", icon: GraduationCap },
     { title: "LinkedIn Bio", icon: Linkedin },
+  ];
+
+  const linkTrend = [
+    {
+      icon: <Lock className="w-4 h-4" />,
+      label: "Privacy",
+      value: <span className="font-medium text-gray-900">Public Profile</span>,
+    },
+    {
+      icon: <Linkedin className="w-4 h-4" />,
+      label: "Linkedin",
+      value: (
+        <span className="bg-gray-100 text-gray-900 rounded-full px-3 py-1 font-medium max-w-full truncate inline-block">
+          linkedin.com/company/qo...
+        </span>
+      ),
+    },
+    {
+      icon: <Mail className="w-4 h-4" />,
+      label: "Email",
+      value: (
+        <span className="bg-gray-100 text-gray-900 rounded-full px-3 py-1 font-medium max-w-full truncate inline-block">
+          skeshav628@gmail.com
+        </span>
+      ),
+    },
+    {
+      icon: <MapPin className="w-4 h-4" />,
+      label: "Address",
+      value: (
+        <span className="font-medium text-gray-900 max-w-full truncate inline-block">
+          California, United States of A...
+        </span>
+      ),
+    },
   ];
 
   return (
@@ -170,7 +204,9 @@ export default function ProfileCard() {
                     >
                       <div className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-700 bg-white rounded-md">
                         <Icon className="w-4 h-4 text-semibold text-gray-500 text-[#7a7a7a]" />
-                        <span className="text-semibold text-[#7a7a7a]">{label}</span>
+                        <span className="text-semibold text-[#7a7a7a]">
+                          {label}
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -188,43 +224,16 @@ export default function ProfileCard() {
 
           <section className="p-6">
             {/* Contact */}
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-5 items-center justify-between">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Lock className="w-4 h-4" />
-                  <span>Privacy</span>
+            <div className="space-y-4 text-sm">
+              {linkTrend.map((item, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 text-muted-foreground min-w-[100px]">
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </div>
+                  <div className="flex-1">{item.value}</div>
                 </div>
-                <span className="font-medium text-gray-900">
-                  Public Profile
-                </span>
-              </div>
-              <div className="flex gap-5 items-center justify-between">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Linkedin className="w-4 h-4" />
-                  <span>Linkedin</span>
-                </div>
-                <span className="bg-gray-100 text-gray-900 rounded-full px-3 py-1 font-medium max-w-[190px] truncate">
-                  linkedin.com/company/qo...
-                </span>
-              </div>
-              <div className="flex gap-5 items-center justify-between">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Mail className="w-4 h-4" />
-                  <span>Email</span>
-                </div>
-                <span className="bg-gray-100 text-gray-900 rounded-full px-3 py-1 font-medium max-w-[190px] truncate">
-                  skeshav628@gmail.com
-                </span>
-              </div>
-              <div className="flex gap-5 items-center justify-between">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <MapPin className="w-4 h-4" />
-                  <span>Address</span>
-                </div>
-                <span className="font-medium text-gray-900 truncate max-w-[190px]">
-                  California, United States of A...
-                </span>
-              </div>
+              ))}
             </div>
           </section>
 
