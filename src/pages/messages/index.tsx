@@ -10,7 +10,7 @@ export default function Messages() {
   return (
     <div className="flex relative flex-col text-sm text-muted-foreground">
       {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-0 lg:px-0 pt-6 pb-4">
         <section className="space-y-4">
           {/* Top Info Row */}
           <div className="flex items-start justify-between">
