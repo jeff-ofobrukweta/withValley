@@ -44,9 +44,9 @@ export default function MessageCard({
       </div>
 
       {/* Collapsible Body */}
-      <div className="shadow-sm border rounded-xl bg-white">
+      <div className="shadow-sm border rounded-sm bg-white">
         <div
-          className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-muted/50"
+          className="flex items-center justify-between min-h-[56px] px-4 py-3 cursor-pointer hover:bg-muted/50"
           onClick={handleToggle}
         >
           <div className="flex items-center text-[#7a7a7a] gap-2 text-sm font-medium">
