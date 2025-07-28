@@ -11,20 +11,8 @@ import {
   CommandItem,
 } from "@/components/ui/command";
 
-type FilterOption = {
-  label: string;
-  count: number;
-};
+import { typeOptions } from "@/lib/api";
 
-const typeOptions: FilterOption[] = [
-  { label: "Custom messages", count: 36 },
-  { label: "Prompt", count: 33 },
-  { label: "Regenerated messaging", count: 31 },
-  { label: "Human edits", count: 31 },
-  { label: "Feedback", count: 31 },
-  { label: "Prospect added", count: 31 },
-  { label: "Updated datapoint", count: 31 },
-];
 
 export default function TypeFilterDialog() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);

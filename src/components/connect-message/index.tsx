@@ -40,7 +40,7 @@ export default function ConnectMessageCard() {
         {/* Header */}
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
-            <Rocket className="w-4 h-4" />
+            <Rocket className="w-4 h-4 text-gray-400" />
             Connect Message
           </div>
 
